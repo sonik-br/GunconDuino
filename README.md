@@ -13,6 +13,16 @@ Wire the controller directly to the arduino or use this [shield](https://github.
 While developing I'm using a psx controller extension cable wired to the arduino
 ![device](docs/img01.jpg)
 
+The wires and pins are set in the arduino sketch:
+
+* ATT = 10
+* CMD = 11
+* DAT = 12
+* CLK = 13
+* Also connect the 3.3V and GND
+
+Check the ps controller pinout [here](https://store.curiousinventor.com/guides/PS2)
+
 Before using it you will need the library PsxNewLib.
 There's a dedicated [branch](https://github.com/SukkoPera/PsxNewLib/tree/guncon_support) with support for the gcon.
 
