@@ -23,12 +23,17 @@ The wires and pins are set in the arduino sketch:
 
 Check the ps controller pinout [here](https://store.curiousinventor.com/guides/PS2)
 
-Before using it you will need the library PsxNewLib.
-There's a dedicated [branch](https://github.com/SukkoPera/PsxNewLib/tree/guncon_support) with support for the gcon.
-
-Also need to edit the file PsxNewLib.h and change INTER_CMD_BYTE_DELAY to 50
+Before using it you will need the library [PsxNewLib](https://github.com/SukkoPera/PsxNewLib).
 
 This only works on a CRT at sd resolutions (15K)
+
+
+### WARNING
+Playstation accessories works with 3.3v.
+
+Arduino sends 5v on it's I/O pins.
+
+I strongly advise to use a level shifter to get the correct voltage. Also use a external voltage regulator and don't use the 3.3v output from the arduino board.
 
 ### Usage
 
