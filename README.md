@@ -1,6 +1,9 @@
 # GunconDuino
 
-PS1 Guncon controller as a Mouse via Arduino Leonardo
+PS1 Guncon controller as a Mouse or Joystick via Arduino Leonardo
+
+
+#### Attention! Project updated on august 2021. It now uses the Leonardo's ICSP header and proper 3.3 volts.
 
 This is a work in progress project. It works as it is but I can't provide support.
 Use at you own risk.
@@ -8,37 +11,37 @@ Use at you own risk.
 See it in action
 https://www.youtube.com/watch?v=45CCB9uxqrk
 
-Wire the controller directly to the arduino or use this [shield](https://github.com/SukkoPera/PsxControllerShield)
+PlayStation accessories works in 3.3v. You will need a voltage regulator and a level shifter.
 
-While developing I'm using a psx controller extension cable wired to the arduino
-![device](docs/img01.jpg)
+#### I strongly recommend to use this [shield](https://github.com/SukkoPera/PsxControllerShield)
 
-The wires and pins are set in the arduino sketch:
+![shield](https://raw.githubusercontent.com/SukkoPera/PsxControllerShield/master/img/render-top.png)
 
-* ATT = 10
-* CMD = 11
-* DAT = 12
-* CLK = 13
-* Also connect the 3.3V and GND
+#### If not using the shield then connect it this way:
 
-Check the ps controller pinout [here](https://store.curiousinventor.com/guides/PS2)
+![controller pinout](docs/psx.png)
+![wiring](docs/Guncon_Voltage.png)
+![leonardo icsp header](docs/icsp_header.png)
 
-Before using it you will need the library [PsxNewLib](https://github.com/SukkoPera/PsxNewLib).
+Before using it you will need the to install the libraries [PsxNewLib](https://github.com/SukkoPera/PsxNewLib) and [ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary).
 
 This only works on a CRT at sd resolutions (15K)
 
-
-### WARNING
-Playstation accessories works with 3.3v.
-
-Arduino sends 5v on it's I/O pins.
-
-I strongly advise to use a level shifter to get the correct voltage. Also use a external voltage regulator and don't use the 3.3v output from the arduino board.
+It was tested with an oficial namco guncon and with a 3rd party one.
+My 3rd party gun also have a USB port (to use on PS2). My gun requires to also connect the USB to power it.
 
 ### Usage
+The adapter is also compatible with ps1/ps2 dualshock controllers. It's useful to use a controller when mapping the inputs on a emulator, then swap it for the guncon to play.
 
-When connecting it to a PC it will be in a not enabled state. It will not report any mouse movement.
-To enable it simply press the trigger once.
+When connecting it to a PC it will be in a not enabled state. It will not report any mouse or joystick movement.
+It's possible to enabe it as a mouse or as a joystick:
+
+| Guncon        | DualShock | Mode     |
+| ------------- |---------- | -------- |
+| Trigger       | Circle    | Mouse    |
+| A (Left side) | Start     | Joystick |
+
+
 If need to disable it, point the gun outside of the screen and press A + B + Trigger.
 
 The guncon needs to "scan" the entire screen before it can properly send the coorinates.
@@ -46,11 +49,20 @@ Just point it at the screen and move slowly from side to side and top to botom.
 It's recommended to use a full screen white image when doing this.
 
 Buttons are mapped as follows:
-* A (Left side) -> Mouse Right
-* B (Right side) -> Mouse Middle
-* Trigger -> Mouse Left
+
+| Guncon         | DualShock | Mouse         | Joystick |
+| -------------- | --------- |-------------- | -------- |
+| Trigger        | Circle    | Left button   | Button 1 |
+| A (Left side)  | Start     | Right button  | Button 2 |
+| B (Right side) | Cross     | Middle button | Button 3 |
+
+
  
 ### Credits
-This piece of software would not be possible without the amazing [PsxNewLib](https://github.com/SukkoPera/PsxNewLib).
+This piece of software would not be possible without the amazing [PsxNewLib](https://github.com/SukkoPera/PsxNewLib) by SukkoPera.
 
-It also uses a modified version of [absmouse](https://github.com/jonathanedgecombe/absmouse)
+It also uses a modified version of [absmouse](https://github.com/jonathanedgecombe/absmouse) by  jonathanedgecombe .
+
+[ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) by MHeironimus.
+
+PS controller pinout by [curiousinventor](https://store.curiousinventor.com/guides/PS2).
