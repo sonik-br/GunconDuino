@@ -28,7 +28,8 @@ Before using it you will need the to install the libraries [PsxNewLib](https://g
 This only works on a CRT at sd resolutions (15K)
 
 It was tested with an oficial namco guncon and with a 3rd party one.
-My 3rd party gun also have a USB port (to use on PS2). My gun requires to also connect the USB to power it.
+Oficial guncon works perfectly.
+With my 3rd party gun the readings are not correct. I still need to try to fix this.
 
 ### Usage
 The adapter is also compatible with ps1/ps2 dualshock controllers. It's useful to use a controller when mapping the inputs on a emulator, then swap it for the guncon to play.
