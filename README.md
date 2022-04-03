@@ -5,6 +5,9 @@ PS1 Guncon controller as a Mouse or Joystick via Arduino Leonardo
 
 #### Attention! Project updated on august 2021. It now uses the Leonardo's ICSP header and proper 3.3 volts.
 
+If you want to use the guncon on the [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki), this code will not work. Check out my other project, the [RetroZordAdapter](https://github.com/sonik-br/RetroZordAdapter/tree/main/PlayStation). It also supports a lot more accessories.<br/>
+If you already built a GunconDuino adapter and want to use on MiSTer you can use the new code from RetroZordAdapter. Pins are the same except the ATT pin. Check the documentation before using.
+
 This is a work in progress project. It works as it is but I can't provide support.
 Use at you own risk.
 
